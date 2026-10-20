@@ -44,7 +44,8 @@ void addEmployee(Employee employees[], int *count) {
         printf("  Salary: $%.2f\n", employees[i].salary);
         printf("---------------------\n");
     }
-}void searchEmployee(const Employee employees[], int count) {
+}
+void searchEmployee(const Employee employees[], int count) {
     if (count == 0) {
         printf("\nNo employees in the system to search.\n");
         return;
@@ -70,27 +71,5 @@ void addEmployee(Employee employees[], int *count) {
 
     if (!found) {
         printf("\nEmployee with ID %d not found.\n", targetId);
-    }
-}
-void searchEmployee(const Employee employees[], int count) {
-    int searchId;
-    printf("Enter Employee ID to search: ");
-    scanf("%d", &searchId);
-
-    int found = 0;
-    for (int i = 0; i < count; i++) {
-        if (employees[i].id == searchId) {
-            printf("\n--- Employee Found ---\n");
-            printf("ID: %d\n", employees[i].id);
-            printf("Name: %s\n", employees[i].name);
-            printf("Position: %s\n", employees[i].position);
-            printf("Salary: $%.2f\n", employees[i].salary);
-            printf("----------------------\n");
-            found = 1;
-            break;
-        }
-    }
-    if (!found) {
-        printf("Employee with ID %d not found.\n", searchId);
     }
 }
